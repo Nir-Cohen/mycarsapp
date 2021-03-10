@@ -1,0 +1,18 @@
+<br>
+Please select one option from the select options
+<br>
+Cars List: <select name="cars_id" @idCar class="form-select" aria-label="Default select example">
+    <option value="empty_option"></option>
+    <%= @cars.each do |car| %>
+    <option value="<%= car.id %>"><%= car.title %></option>
+    <% end %>
+</select>
+<br>
+Drivers List: <select name="cars_id" class="form-select" aria-label="Default select example">
+    <%= @drivers.each do |driver| %>
+    <option value="<%= driver.id %>"><%= driver.name %></option>
+    <% end %>
+</select>
+<br>
+
+<%= link_to 'Submit', searchByIds_path(:event => @idCar) %>
